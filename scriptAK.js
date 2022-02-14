@@ -1,22 +1,9 @@
 let helloWorldPopup;
 WA.onInit().then(() => {
     console.log('Current player name: ', WA.player.name);
-	WA.chat.sendChatMessage('Herzlich willkommen! Sie befinden sich im Kommunikations-MINT-Raum mit vielen verschiedenen Jitsi-Zonen! Die stille Zone befindet sich auf der rechten Seite - unten!', 'Admin');
+	WA.chat.sendChatMessage('Herzlich willkommen! Sie befinden sich im Kommunikations-MINT-Raum mit vielen verschiedenen Jitsi-Zonen! Der Raum links dient dem Austausch über digitale Themen allgemein. Im Raum in der Mitte kann man sich über informatorische Themen austauschen. Rechts gibt es einen Raum für den Austausch über mathematische Dinge. Unten rechts treffen sich die Referentinnen!', 'Admin');
 	
 	
-	
-
-	// Open the popup when we enter a given zone
-	helloWorldPopup = WA.room.onEnterLayer("silentzone").subscribe(() => {
-		WA.ui.openPopup("popupSilent", 'In der Silent-Zone!', [{
-			label: "schliessen",
-			className: "primary",
-			callback: (popup) => {
-				// Close the popup when the "Close" button is pressed.
-				popup.close();
-			}
-		}]);
-	});
 
 	// Close the popup when we leave the zone.
 	WA.room.onLeaveLayer("silentzone").subscribe(() => {
